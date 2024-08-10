@@ -18,3 +18,5 @@ func main() {
 	fmt.Println(titular2, numeroAgencia2, numeroConta2, saldo2)
 
 }
+
+// aula 2 finalizada
