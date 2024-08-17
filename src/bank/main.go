@@ -17,4 +17,12 @@ func main() {
 
 	fmt.Println(contaDoEliote)
 	fmt.Println(contaDaMariah)
+
+	// outra forma de criar struct
+	// o (*) eh para usar um ponteiro para fazer referencia a algo na memoria
+	var contaDaZari *ContaCorrente
+	contaDaZari = new(ContaCorrente)
+	contaDaZari.titular = "Zari"
+	contaDaZari.saldo = 350
+	fmt.Println(*contaDaZari)
 }
