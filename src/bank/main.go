@@ -25,4 +25,8 @@ func main() {
 	contaDaZari.titular = "Zari"
 	contaDaZari.saldo = 350
 	fmt.Println(*contaDaZari)
+
+	// uso do (&) para saber o endereço de fato na memoria
+	fmt.Println(&contaDaZari)
+
 }
