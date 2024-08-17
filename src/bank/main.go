@@ -31,38 +31,27 @@ func (c *ContaCorrente) Depositar(valorDoDeposito float64) (string, float64) {
 	}
 }
 
-func main() {
-	contaDaAna := ContaCorrente{}
-	contaDaAna.titular = "Ana"
-	contaDaAna.saldo = 500.00
-
-	fmt.Println(contaDaAna.saldo)
-
-	fmt.Println(contaDaAna.Sacar(100))
-
-	fmt.Println(contaDaAna.saldo)
-
-	fmt.Println(contaDaAna.Depositar(-2000))
+// funçao para fazer a transferencia
+func (c *ContaCorrente) Transferir(valorDaTransferencia float64, contaDestino *ContaCorrente) bool {
+	if valorDaTransferencia < c.saldo && valorDaTransferencia > 0 {
+		c.saldo -= valorDaTransferencia
+		contaDestino.Depositar(valorDaTransferencia)
+		return true
+	} else {
+		return false
+	}
 }
 
-// func main() {
-// 	contaDoEliote := ContaCorrente{titular: "Eliote", numeroAgencia: 589,
-// 		numeroConta: 11525, saldo: 125.5}
+func main() {
+	contaDaAna := ContaCorrente{titular: "Ana", saldo: 300}
+	contaDoFabio := ContaCorrente{titular: "Fabio", saldo: 700}
 
-// 	contaDaMariah := ContaCorrente{"Mariah", 222, 24321, 200}
+	// referenciando o endereço do ponteiro com (&)
+	status := contaDoFabio.Transferir(-2000, &contaDaAna)
 
-// 	fmt.Println(contaDoEliote)
-// 	fmt.Println(contaDaMariah)
+	fmt.Println(status)
+	fmt.Println(contaDaAna)
+	fmt.Println(contaDoFabio)
+}
 
-// 	// outra forma de criar struct
-// 	// o (*) eh para usar um ponteiro para fazer referencia a algo na memoria
-// 	var contaDaZari *ContaCorrente
-// 	contaDaZari = new(ContaCorrente)
-// 	contaDaZari.titular = "Zari"
-// 	contaDaZari.saldo = 350
-// 	fmt.Println(*contaDaZari)
-
-// 	// uso do (&) para saber o endereço de fato na memoria
-// 	fmt.Println(&contaDaZari)
-
-// }
+// aula 9 terminada
