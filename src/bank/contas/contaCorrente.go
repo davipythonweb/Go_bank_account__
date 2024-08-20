@@ -1,7 +1,11 @@
 package contas
 
+import (
+	"Go_bank_account__/src/bank/clientes"
+)
+
 type ContaCorrente struct {
-	Titular       string
+	Titular       clientes.Titular
 	NumeroAgencia int
 	NumeroConta   int
 	Saldo         float64
