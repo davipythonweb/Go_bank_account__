@@ -13,13 +13,13 @@ type ContaCorrente struct {
 
 // funcao Saque que verifica se o valor eh maior
 // que zero e se o valor da transaçao eh menor que o saldo.
-func (c *ContaCorrente) Sacar(valorDoSaque float64) (string, float64) {
+func (c *ContaCorrente) Sacar(valorDoSaque float64) string {
 	podeSacar := valorDoSaque > 0 && valorDoSaque <= c.saldo
 	if podeSacar {
 		c.saldo -= valorDoSaque
-		return "Saque de realizado com sucesso.", c.saldo
+		return "Saque realizado com sucesso."
 	} else {
-		return "saldo insuficiente.", c.saldo
+		return "saldo insuficiente."
 	}
 }
 
