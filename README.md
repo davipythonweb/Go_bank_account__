@@ -14,6 +14,8 @@
 condicionais,interface, ponteiro(*),referenciando lugar do ponteiro(&)`
 
 
+- compilando e rodarando
+`go run main.go`
 
 - compilando e rodar todos os arquivos na pasta de uma vez
 `go run *.go`
